@@ -4,7 +4,7 @@
   "displayName": "Mica",
   "description": "Complete language support for Mica programming language with syntax highlighting, debugging, and IntelliSense",
   "version": "2.0.0",
-  "publisher": "mikepet65",
+  "publisher": "mica-development",
   "author": {
     "name": "Michael Petersen"
   },
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mica-development/mica"
+    "url": "https://github.com/mica-development/mica-extension"
   },
   "contributes": {
     "languages": [

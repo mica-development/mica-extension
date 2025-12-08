@@ -7,6 +7,8 @@
   [![VS Code](https://img.shields.io/badge/VS%20Code-1.106%2B-blue.svg)](https://code.visualstudio.com/)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
   
+  **[Visit the Mica Development UG Homepage](https://mica-dev.com/)**
+  
 </div>
 
 ---
@@ -100,12 +102,9 @@ begin
 end.
 ```
 
-## Requirements
+## Learning Mica
 
-To compile and run Mica programs:
-- [Mica Compiler](https://github.com/mica-development/mica) (v4.0.0 or later)
-- GCC 15+ (for assembling and linking)
-- x86_64 64-bit Linux (Ubuntu 25.04 recommended) or use the provided development container
+New to Mica? Check out the [Mica Tutorials](https://github.com/mica-development/mica-tutorials) to learn the language step by step. The tutorials also include detailed instructions on how to obtain and install the Mica compiler.
 
 ## Extension Settings
 
@@ -142,7 +141,7 @@ Complete rewrite of the extension with:
 
 ## Contributing
 
-Found a bug or want to contribute? Visit the [GitHub repository](https://github.com/mica-development/mica).
+Found a bug or want to contribute? Visit the [GitHub repository](https://github.com/mica-development/mica-extension).
 
 ## License
 
