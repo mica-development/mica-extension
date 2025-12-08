@@ -1,0 +1,136 @@
+{
+  "Program Template": {
+    "prefix": "program",
+    "body": [
+      "{ ${1:Program description} }",
+      "program ${2:name};",
+      "",
+      "var",
+      "    ${3:variable} : ${4:int32};",
+      "",
+      "begin",
+      "    $0",
+      "end."
+    ],
+    "description": "Basic program template"
+  },
+  "Procedure": {
+    "prefix": "procedure",
+    "body": [
+      "procedure ${1:name}();",
+      "var",
+      "    ${2:local} : ${3:int32};",
+      "begin",
+      "    $0",
+      "end;"
+    ],
+    "description": "Procedure declaration"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": [
+      "function ${1:name}() : ${2:int32};",
+      "var",
+      "    ${3:result} : ${2:int32};",
+      "begin",
+      "    ${3:result} := ${4:0};",
+      "    $0",
+      "end;"
+    ],
+    "description": "Function declaration"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} then",
+      "    ${2:statement};"
+    ],
+    "description": "If-then statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition} then",
+      "begin",
+      "    ${2:true_block}",
+      "end",
+      "else",
+      "begin",
+      "    ${3:false_block}",
+      "end;"
+    ],
+    "description": "If-then-else statement"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} do",
+      "begin",
+      "    $0",
+      "end;"
+    ],
+    "description": "While-do loop"
+  },
+  "Variable Declaration": {
+    "prefix": "var",
+    "body": [
+      "var",
+      "    ${1:name} : ${2|int8,int16,int32,int64,float32,float64,string,bool|};"
+    ],
+    "description": "Variable declaration"
+  },
+  "Constant Declaration": {
+    "prefix": "const",
+    "body": [
+      "const",
+      "    ${1:NAME} = ${2:value};"
+    ],
+    "description": "Constant declaration"
+  },
+  "Write Line": {
+    "prefix": "writeln",
+    "body": [
+      "writeln(\"${1:%d}\", ${2:value});"
+    ],
+    "description": "Write line with format string"
+  },
+  "Read Line": {
+    "prefix": "readln",
+    "body": [
+      "readln(${1:variable});"
+    ],
+    "description": "Read line into variable"
+  },
+  "Type Cast": {
+    "prefix": "cast",
+    "body": [
+      "${1:value} as ${2|int8,int16,int32,int64,float32,float64,uint8,uint16,uint32,uint64|}"
+    ],
+    "description": "Type cast expression"
+  },
+  "Block Comment": {
+    "prefix": "comment",
+    "body": [
+      "{ ${1:comment} }"
+    ],
+    "description": "Block comment"
+  },
+  "Multi-line Block Comment": {
+    "prefix": "commentblock",
+    "body": [
+      "{",
+      "    ${1:Multi-line comment}",
+      "}"
+    ],
+    "description": "Multi-line block comment"
+  },
+  "Begin-End Block": {
+    "prefix": "begin",
+    "body": [
+      "begin",
+      "    $0",
+      "end;"
+    ],
+    "description": "Begin-end block"
+  }
+}

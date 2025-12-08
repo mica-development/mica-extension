@@ -1,0 +1,65 @@
+{
+  "name": "mica-language",
+  "license": "MIT",
+  "displayName": "Mica",
+  "description": "Complete language support for Mica programming language with syntax highlighting, debugging, and IntelliSense",
+  "version": "2.0.0",
+  "publisher": "mikepet65",
+  "author": {
+    "name": "Michael Petersen"
+  },
+  "icon": "images/mica.png",
+  "engines": {
+    "vscode": "^1.106.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Debuggers",
+    "Snippets"
+  ],
+  "keywords": [
+    "mica",
+    "compiler"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mica-development/mica"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "mica",
+        "aliases": [
+          "Mica",
+          "mica"
+        ],
+        "extensions": [
+          ".mica"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/mica.png",
+          "dark": "./images/mica.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mica",
+        "scopeName": "source.mica",
+        "path": "./syntaxes/mica.tmLanguage.json"
+      }
+    ],
+    "breakpoints": [
+      {
+        "language": "mica"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "mica",
+        "path": "./snippets/mica.json"
+      }
+    ]
+  }
+}
