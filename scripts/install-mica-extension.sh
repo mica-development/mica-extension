@@ -1,32 +1,19 @@
 #!/bin/bash
 
-# install Mica language extension for VS Code
+# install Mica language extension for VS Code as user extension
 echo "Installing or updating Mica language extension"
 
-# detect the correct VS Code extensions directory
-if [ -d "$HOME/.vscode/extensions" ]; then
-    EXTENSION_BASE="$HOME/.vscode/extensions"
-elif [ -d "$HOME/.vscode-server/extensions" ]; then
-    EXTENSION_BASE="$HOME/.vscode-server/extensions"
-elif [ -d "$HOME/.vscode-remote/extensions" ]; then
-    EXTENSION_BASE="$HOME/.vscode-remote/extensions"
-elif [ -d "$HOME/.vscode-server-insiders/extensions" ]; then
-    EXTENSION_BASE="$HOME/.vscode-server-insiders/extensions"
-elif [ -d "$HOME/.vscode-insiders/extensions" ]; then
-    EXTENSION_BASE="$HOME/.vscode-insiders/extensions"
-else
-    echo "Error: Could not find VS Code extensions directory"
-    echo "Searched in:"
-    echo "  - $HOME/.vscode/extensions"
-    echo "  - $HOME/.vscode-server/extensions"
-    echo "  - $HOME/.vscode-remote/extensions"
-    echo "  - $HOME/.vscode-server-insiders/extensions"
-    echo "  - $HOME/.vscode-insiders/extensions"
-    exit 1
-fi
+# use user extensions directory
+EXTENSION_DIR="$HOME/.vscode/extensions/mica-language"
+echo "Installing to user extensions directory: $HOME/.vscode/extensions"
 
-EXTENSION_DIR="$EXTENSION_BASE/mica-language"
-echo "Found VS Code extensions directory: $EXTENSION_BASE"
+# get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# the workspace root is the parent of the scripts directory
+WORKSPACE_ROOT="$(dirname "$SCRIPT_DIR")"
+
+echo "Extension source: $WORKSPACE_ROOT"
 
 # remove old version if exists
 if [ -d "$EXTENSION_DIR" ]; then
@@ -38,9 +25,15 @@ fi
 # create extension directory for the Mica language
 mkdir --parents "$EXTENSION_DIR"
 
-# copy extension to VS Code extensions directory
+# copy extension files to VS Code extensions directory
 echo "Installing Mica extension"
-cp --recursive .vscode/extensions/mica-language/* "$EXTENSION_DIR"
+cp "$WORKSPACE_ROOT/package.json" "$EXTENSION_DIR/"
+cp "$WORKSPACE_ROOT/language-configuration.json" "$EXTENSION_DIR/"
+cp "$WORKSPACE_ROOT/README.md" "$EXTENSION_DIR/"
+cp "$WORKSPACE_ROOT/LICENSE" "$EXTENSION_DIR/"
+cp -r "$WORKSPACE_ROOT/images" "$EXTENSION_DIR/"
+cp -r "$WORKSPACE_ROOT/snippets" "$EXTENSION_DIR/"
+cp -r "$WORKSPACE_ROOT/syntaxes" "$EXTENSION_DIR/"
 
 # verify installation
 if [ -d "$EXTENSION_DIR" ]; then
@@ -51,6 +44,6 @@ if [ -d "$EXTENSION_DIR" ]; then
     echo ""
     echo "Please reload VS Code window: press Ctrl+Shift+P (or Cmd+Shift+P) and run 'Developer: Reload Window'"
 else
-    echo "Error: Installation failed"
+    echo "Error: Installation failed, please verify your VS Code extensions directory permissions."
     exit 1
 fi
