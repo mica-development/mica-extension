@@ -98,7 +98,7 @@
         },
         {
           "name": "keyword.declaration.mica",
-          "match": "\\b(const|var|procedure|function|program|library|object)\\b"
+          "match": "\\b(const|var|imp|procedure|function|program|library|object)\\b"
         },
         {
           "name": "keyword.operator.word.mica",
