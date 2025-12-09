@@ -196,6 +196,16 @@
           "match": "(?<=var\\s+)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
         {
+          "name": "variable.other.import.mica",
+          "match": "(?<=imp\\s+)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
+          "comment": "Import identifier"
+        },
+        {
+          "name": "entity.name.namespace.mica",
+          "match": "(?<=:\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*;)",
+          "comment": "Namespace in imp declaration"
+        },
+        {
           "name": "entity.name.type.mica",
           "match": "(?<=record\\s+)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },

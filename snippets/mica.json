@@ -79,6 +79,22 @@
     ],
     "description": "Variable declaration"
   },
+  "Import Declaration": {
+    "prefix": "imp",
+    "body": [
+      "imp ${1:identifier} : ${2:namespace};"
+    ],
+    "description": "Import declaration from namespace"
+  },
+  "Import Block": {
+    "prefix": "imports",
+    "body": [
+      "imp ${1:writeln} : ${2:std};",
+      "imp ${3:readln} : ${2:std};",
+      "$0"
+    ],
+    "description": "Multiple import declarations"
+  },
   "Constant Declaration": {
     "prefix": "const",
     "body": [
