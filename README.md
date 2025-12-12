@@ -77,12 +77,15 @@ Mica combines the clarity of Pascal-like syntax with the power of systems progra
 { Fibonacci sequence calculator }
 program fibonacci;
 
+imp
+    writeln : std;
+
 var
     n, a, b, temp : int32;
 
 begin
     writeln("Enter number of terms: ");
-    readln(n);
+    readln(address n);
     
     a := 0;
     b := 1;
