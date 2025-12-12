@@ -1,0 +1,13 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+.git/**
+.github/**
+*.vsix
+vsc-extension-quickstart.md
+**/node_modules/**
+**/*.map
+**/.eslintrc.json
+**/*.ts
+test-imp-syntax.mica
+scripts/**

@@ -4,7 +4,7 @@
   "displayName": "Mica",
   "description": "Complete language support for Mica programming language with syntax highlighting, debugging, and IntelliSense",
   "version": "2.0.0",
-  "publisher": "mica-development",
+  "publisher": "mica-development-ug",
   "author": {
     "name": "Michael Petersen"
   },
